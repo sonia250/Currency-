@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-money-bill-wave"></i> Currency Exchange Tracker</h1>
+    </header>
+    
+    <main>
+        <section class="converter-container">
+            <h2>Currency Converter</h2>
+            <div class="converter">
+                <div class="input-group">
+                    <input type="number" id="amount" placeholder="Amount" value="1">
+                    <select id="from-currency">
+                        <!-- Will be populated with JavaScript -->
+                    </select>
+                </div>
+                
+                <button id="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+                
+                <div class="input-group">
+                    <input type="number" id="result" placeholder="Result" readonly>
+                    <select id="to-currency">
+                        <!-- Will be populated with JavaScript -->
+                    </select>
+                </div>
+                
+                <button id="convert-btn">Convert</button>
+            </div>
+            
+            <div class="exchange-rate">
+                <p id="rate-info">1 USD = <span id="rate-value">Loading...</span></p>
+                <button id="add-favorite" title="Add to favorites"><i class="far fa-star"></i></button>
+            </div>
+        </section>
+        
+        <section class="favorites-container">
+            <h2>Favorites</h2>
+            <div id="favorites-list" class="favorites-list">
+                <!-- Will be populated with JavaScript -->
+                <p class="empty-message">You have no favorites yet. Add some currency pairs to track them here.</p>
+            </div>
+        </section>
+        
+        <section class="historical-container">
+            <h2>Historical Rates</h2>
+            <div class="historical-form">
+                <div class="input-group">
+                    <label for="currency-pair">Currency Pair:</label>
+                    <select id="history-currency-pair">
+                        <!-- Will be populated with JavaScript -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="time-period">Time Period:</label>
+                    <select id="time-period">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30">Last 30 Days</option>
+                        <option value="90">Last 90 Days</option>
+                    </select>
+                </div>
+                <button id="fetch-history-btn">Fetch History</button>
+            </div>
+            <div id="historical-chart" class="historical-chart">
+                <!-- Chart will be loaded here -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Currency Exchange Tracker &copy; 2025 | Data provided by <a href="https://www.exchangerate-api.com/" target="_blank">ExchangeRate-API</a></p>
+    </footer>
+
+    <!-- Load scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
